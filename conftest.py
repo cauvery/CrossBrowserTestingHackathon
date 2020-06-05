@@ -150,7 +150,7 @@ def eyes_setup(request):
             .set_api_key( os.environ['APPLITOOLS_API_KEY'] )
             .set_app_name( "Blank App" )
             # .set_test_name("Smoke Test via Ultrafast Grid")
-            # .set_batch(BatchInfo("UFG Hackathon"))
+            .set_batch(BatchInfo("UFG Hackathon"))
             .add_browser( 1200, 700, BrowserType.CHROME )
             .add_browser( 1200, 700, BrowserType.FIREFOX )
             .add_browser( 1200, 700, BrowserType.EDGE_CHROMIUM )
@@ -163,7 +163,7 @@ def eyes_setup(request):
     yield eyes
 
     results = eyes.close( False )
-    results = ultrafast_grid_runner.get_all_test_results()
+    #results = ultrafast_grid_runner.get_all_test_results()
     print( results )
     eyes.abort()
 
