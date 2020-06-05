@@ -6,6 +6,8 @@
 
 Cross Browser Testing using Traditional approach and Applitools AI with Ultrafast Grid 
 
+Note: Traditional tests can be viewed as html reports and screenshot is available for failures embedded within html report.
+
 ## Installation
 
 First you will need to clone the repo:

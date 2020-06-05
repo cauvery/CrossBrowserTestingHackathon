@@ -1,6 +1,7 @@
+import platform
+
 import pytest
 from applitools.common import ScreenOrientation
-from webdriver_manager.firefox import GeckoDriverManager
 
 from core_utils import config
 from selenium import webdriver
@@ -9,6 +10,7 @@ from applitools.selenium import Eyes, Target
 
 from webdriver_manager.firefox import GeckoDriver
 from webdriver_manager.chrome import ChromeDriverManager
+from webdriver_manager.firefox import GeckoDriverManager
 from webdriver_manager.microsoft import EdgeDriverManager
 from selenium.webdriver import Chrome, Firefox, Edge, DesiredCapabilities
 import os
@@ -55,20 +57,20 @@ def res(request):
 browsers = [
     {"browser": "Chrome", "width": "1200", "height": "700", "device": "laptop"},
     {"browser": "Firefox", "width": "1200", "height": "700", "device": "laptop"},
-    # {"browser": "Edge", "width":"1200", "height": "700", "device": "laptop"},
+    {"browser": "Edge", "width":"1200", "height": "700", "device": "laptop"},
     {"browser": "Chrome", "width": "768", "height": "700", "device": "tablet"},
     {"browser": "Firefox", "width": "768", "height": "700", "device": "tablet"},
-    # {"browser": "Edge", "width":"768", "height": "700", "device": "tablet"},
+    {"browser": "Edge", "width":"768", "height": "700", "device": "tablet"},
     {"browser": "Mobile Portrait", "width": "500", "height": "700", "device": "mobile"}
 ]
 
 browsers_ids = [
     "Chrome 1200*700",
     "Firefox 1200*700",
-    # "Edge 1200*700",
+    "Edge 1200*700",
     "Chrome 768*700",
     "Firefox 768*700",
-    # "Edge 768*700",
+    "Edge 768*700",
     "Mobile Portrait 500*700",
 ]
 
@@ -107,8 +109,13 @@ def setup(request, Mgr):
 
     # Edge
     if browser == "Edge":
-        driver = webdriver.Edge( executable_path=os.path.abspath( "./lib/msedgedriver" ) )
-        # driver = webdriver.Edge(executable_path=EdgeDriverManager().install())
+        if platform.system() == "Darwin":
+            caps = DesiredCapabilities.EDGE
+            caps['platform'] = "Mac"
+            driver = webdriver.Edge( executable_path=os.path.abspath( "lib/msedgedriver" ), capabilities=caps )
+            # driver = webdriver.Edge( executable_path=EdgeDriverManager().install(), capabilities=caps )  # getting permissions error on this line
+        else:
+            driver = webdriver.Edge( executable_path=os.path.abspath( "lib/msedgedriver" ) )
 
     # Mobile Portrait
     if browser == "Mobile Portrait":
