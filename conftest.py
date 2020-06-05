@@ -10,7 +10,7 @@ from applitools.selenium import Eyes, Target
 from webdriver_manager.firefox import GeckoDriver
 from webdriver_manager.chrome import ChromeDriverManager
 from webdriver_manager.microsoft import EdgeDriverManager
-from selenium.webdriver import Chrome, Firefox, Edge
+from selenium.webdriver import Chrome, Firefox, Edge, DesiredCapabilities
 import os
 
 from applitools.selenium import (
@@ -168,32 +168,29 @@ def eyes_setup(request):
     eyes.abort()
 
 
-""" 
 @pytest.mark.hookwrapper
 def pytest_runtest_makereport(item):
     pytest_html = item.config.pluginmanager.getplugin( 'html' )
     outcome = yield
     report = outcome.get_result()
     extra = getattr( report, 'extra', [] )
-    import pdb
-    pdb.set_trace()
     if (report.outcome == "failed"):
-        if driver is not None:
-            if report.when == 'call' or report.when == "setup":  
+        if driver != None:
+            if report.when == 'call' or report.when == "setup":
                 xfail = hasattr( report, 'wasxfail' )
                 if (report.skipped and xfail) or (report.failed and not xfail):
                     file_name = report.nodeid.replace( "::", "_" ) + ".png"
                     get_fullpage_screenshot( file_name )
                     if file_name:
                         html = '<div><img src="%s" alt="screenshot" style="width:304px;height:228px;" ' \
-                                'onclick="window.open(this.src)" align="right"/></div>' % file_name
+                               'onclick="window.open(this.src)" align="right"/></div>' % file_name
                         extra.append( pytest_html.extras.html( html ) )
                 report.extra = extra
-     
+
+
 def get_fullpage_screenshot(name):
     if (driver):
         total_height = driver.execute_script( "return document.body.parentNode.scrollHeight" )
         total_width = driver.execute_script( "return document.body.parentNode.scrollWidth" )
         driver.set_window_size( total_width, total_height )
         driver.save_screenshot( name )
-"""
