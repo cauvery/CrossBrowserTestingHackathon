@@ -1,12 +1,3 @@
-1. `git clone https://github.com/cauvery/UFG_Hackathon`
-2.  `UFG_Hackathon` in your favorite editor or in terminal
-3. Change the Applitools API key. Get one by logging into Applitools > Person Icon > My API Key
-4. Install requirements `pip install -r requirements.txt`
-5. Run `ultrafastgrid_demo.py` by calling `python ultrafastgrid_demo.py`
-
-
-
-
 # Cross Browser UFG Hackathon 
 
 ![](https://s3.amazonaws.com/assets.coveralls.io/badges/coveralls_unknown.svg)
