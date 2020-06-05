@@ -1,0 +1,63 @@
+Task: 1, Test Name: Search field is displayed, DOM Id: A__btnsearchm__59,Browser: Chrome, Viewport: 1200 * 700, Device: laptop, Status: True
+Task: 1, Test Name: Search icon is not displayed, DOM Id: A__btnsearchm__59,Browser: Chrome, Viewport: 1200 * 700, Device: laptop, Status: True
+Task: 1, Test Name: Search field is displayed, DOM Id: A__btnsearchm__59,Browser: Firefox, Viewport: 1200 * 700, Device: laptop, Status: True
+Task: 1, Test Name: Search icon is not displayed, DOM Id: A__btnsearchm__59,Browser: Firefox, Viewport: 1200 * 700, Device: laptop, Status: True
+Task: 1, Test Name: Search field is displayed, DOM Id: A__btnsearchm__59,Browser: Chrome, Viewport: 768 * 700, Device: tablet, Status: True
+Task: 1, Test Name: Search icon is not displayed, DOM Id: A__btnsearchm__59,Browser: Chrome, Viewport: 768 * 700, Device: tablet, Status: True
+Task: 1, Test Name: Filters span is displayed, DOM Id: //span[contains(text(),'Filters')],Browser: Chrome, Viewport: 768 * 700, Device: tablet, Status: True
+Task: 1, Test Name: grid view button is not displayed, DOM Id: ti-view-grid,Browser: Chrome, Viewport: 768 * 700, Device: tablet, Status: False
+Task: 1, Test Name: list view button is not displayed, DOM Id: ti-view-list,Browser: Chrome, Viewport: 768 * 700, Device: tablet, Status: False
+Task: 1, Test Name: wish list is not displayed, DOM Id: A__wishlist__52,Browser: Chrome, Viewport: 768 * 700, Device: tablet, Status: False
+Task: 1, Test Name: Search field is displayed, DOM Id: A__btnsearchm__59,Browser: Firefox, Viewport: 768 * 700, Device: tablet, Status: True
+Task: 1, Test Name: Search icon is not displayed, DOM Id: A__btnsearchm__59,Browser: Firefox, Viewport: 768 * 700, Device: tablet, Status: True
+Task: 1, Test Name: Filters span is displayed, DOM Id: //span[contains(text(),'Filters')],Browser: Firefox, Viewport: 768 * 700, Device: tablet, Status: True
+Task: 1, Test Name: grid view button is not displayed, DOM Id: ti-view-grid,Browser: Firefox, Viewport: 768 * 700, Device: tablet, Status: False
+Task: 1, Test Name: list view button is not displayed, DOM Id: ti-view-list,Browser: Firefox, Viewport: 768 * 700, Device: tablet, Status: False
+Task: 1, Test Name: wish list is not displayed, DOM Id: A__wishlist__52,Browser: Firefox, Viewport: 768 * 700, Device: tablet, Status: False
+Task: 1, Test Name: Search field is not displayed, DOM Id: DIV__customsear__41,Browser: Mobile Portrait, Viewport: 500 * 700, Device: mobile, Status: False
+Task: 1, Test Name: Search button is displayed, DOM Id: A__btnsearchm__59,Browser: Mobile Portrait, Viewport: 500 * 700, Device: mobile, Status: True
+Task: 1, Test Name: open filters button is displayed, DOM Id: ti-filter,Browser: Mobile Portrait, Viewport: 500 * 700, Device: mobile, Status: True
+Task: 1, Test Name: grid view button is not displayed, DOM Id: ti-view-grid,Browser: Mobile Portrait, Viewport: 500 * 700, Device: mobile, Status: False
+Task: 1, Test Name: list view button is not displayed, DOM Id: ti-view-list,Browser: Mobile Portrait, Viewport: 500 * 700, Device: mobile, Status: False
+Task: 1, Test Name: wish list is not displayed, DOM Id: A__wishlist__52,Browser: Mobile Portrait, Viewport: 500 * 700, Device: mobile, Status: False
+Task: 1, Test Name: cart count is not displayed, DOM Id: STRONG____50,Browser: Mobile Portrait, Viewport: 500 * 700, Device: mobile, Status: False
+Task: 2, Test Name: number of grid items are not 2, DOM Id: product_grid,Browser: Chrome, Viewport: 1200 * 700, Device: laptop, Status: False
+Task: 2, Test Name: number of grid items are not 2, DOM Id: product_grid,Browser: Firefox, Viewport: 1200 * 700, Device: laptop, Status: False
+Task: 2, Test Name: number of grid items are not 2, DOM Id: product_grid,Browser: Chrome, Viewport: 768 * 700, Device: tablet, Status: False
+Task: 2, Test Name: number of grid items are not 2, DOM Id: product_grid,Browser: Firefox, Viewport: 768 * 700, Device: tablet, Status: False
+Task: 2, Test Name: number of grid items are not 2, DOM Id: product_grid,Browser: Mobile Portrait, Viewport: 500 * 700, Device: mobile, Status: False
+Task: 3, Test Name: Shoe image is displayed, DOM Id: shoe_img,Browser: Chrome, Viewport: 1200 * 700, Device: laptop, Status: True
+Task: 3, Test Name: Shoe Code is displayed, DOM Id: SMALL____84,Browser: Chrome, Viewport: 1200 * 700, Device: laptop, Status: True
+Task: 3, Test Name: Size in Dropdown is correct, DOM Id: current,Browser: Chrome, Viewport: 1200 * 700, Device: laptop, Status: False
+Task: 3, Test Name: New price is displayed correctly, DOM Id: new_price,Browser: Chrome, Viewport: 1200 * 700, Device: laptop, Status: False
+Task: 3, Test Name: Old price is displayed correctly, DOM Id: old_price,Browser: Chrome, Viewport: 1200 * 700, Device: laptop, Status: True
+Task: 3, Test Name: Percentage discount is displayed correctly, DOM Id: percentage,Browser: Chrome, Viewport: 1200 * 700, Device: laptop, Status: True
+Task: 3, Test Name: Add to Cart button is displayed, DOM Id: A__btn__114,Browser: Chrome, Viewport: 1200 * 700, Device: laptop, Status: True
+Task: 3, Test Name: Shoe image is displayed, DOM Id: shoe_img,Browser: Firefox, Viewport: 1200 * 700, Device: laptop, Status: True
+Task: 3, Test Name: Shoe Code is displayed, DOM Id: SMALL____84,Browser: Firefox, Viewport: 1200 * 700, Device: laptop, Status: True
+Task: 3, Test Name: Size in Dropdown is correct, DOM Id: current,Browser: Firefox, Viewport: 1200 * 700, Device: laptop, Status: False
+Task: 3, Test Name: New price is displayed correctly, DOM Id: new_price,Browser: Firefox, Viewport: 1200 * 700, Device: laptop, Status: False
+Task: 3, Test Name: Old price is displayed correctly, DOM Id: old_price,Browser: Firefox, Viewport: 1200 * 700, Device: laptop, Status: True
+Task: 3, Test Name: Percentage discount is displayed correctly, DOM Id: percentage,Browser: Firefox, Viewport: 1200 * 700, Device: laptop, Status: True
+Task: 3, Test Name: Add to Cart button is displayed, DOM Id: A__btn__114,Browser: Firefox, Viewport: 1200 * 700, Device: laptop, Status: True
+Task: 3, Test Name: Shoe image is displayed, DOM Id: shoe_img,Browser: Chrome, Viewport: 768 * 700, Device: tablet, Status: True
+Task: 3, Test Name: Shoe Code is displayed, DOM Id: SMALL____84,Browser: Chrome, Viewport: 768 * 700, Device: tablet, Status: True
+Task: 3, Test Name: Size in Dropdown is correct, DOM Id: current,Browser: Chrome, Viewport: 768 * 700, Device: tablet, Status: False
+Task: 3, Test Name: New price is displayed correctly, DOM Id: new_price,Browser: Chrome, Viewport: 768 * 700, Device: tablet, Status: False
+Task: 3, Test Name: Old price is displayed correctly, DOM Id: old_price,Browser: Chrome, Viewport: 768 * 700, Device: tablet, Status: True
+Task: 3, Test Name: Percentage discount is displayed correctly, DOM Id: percentage,Browser: Chrome, Viewport: 768 * 700, Device: tablet, Status: True
+Task: 3, Test Name: Add to Cart button is displayed, DOM Id: A__btn__114,Browser: Chrome, Viewport: 768 * 700, Device: tablet, Status: True
+Task: 3, Test Name: Shoe image is displayed, DOM Id: shoe_img,Browser: Firefox, Viewport: 768 * 700, Device: tablet, Status: True
+Task: 3, Test Name: Shoe Code is displayed, DOM Id: SMALL____84,Browser: Firefox, Viewport: 768 * 700, Device: tablet, Status: True
+Task: 3, Test Name: Size in Dropdown is correct, DOM Id: current,Browser: Firefox, Viewport: 768 * 700, Device: tablet, Status: False
+Task: 3, Test Name: New price is displayed correctly, DOM Id: new_price,Browser: Firefox, Viewport: 768 * 700, Device: tablet, Status: False
+Task: 3, Test Name: Old price is displayed correctly, DOM Id: old_price,Browser: Firefox, Viewport: 768 * 700, Device: tablet, Status: True
+Task: 3, Test Name: Percentage discount is displayed correctly, DOM Id: percentage,Browser: Firefox, Viewport: 768 * 700, Device: tablet, Status: True
+Task: 3, Test Name: Add to Cart button is displayed, DOM Id: A__btn__114,Browser: Firefox, Viewport: 768 * 700, Device: tablet, Status: True
+Task: 3, Test Name: Shoe image is displayed, DOM Id: shoe_img,Browser: Mobile Portrait, Viewport: 500 * 700, Device: mobile, Status: True
+Task: 3, Test Name: Shoe Code is displayed, DOM Id: SMALL____84,Browser: Mobile Portrait, Viewport: 500 * 700, Device: mobile, Status: True
+Task: 3, Test Name: Size in Dropdown is correct, DOM Id: current,Browser: Mobile Portrait, Viewport: 500 * 700, Device: mobile, Status: False
+Task: 3, Test Name: New price is displayed correctly, DOM Id: new_price,Browser: Mobile Portrait, Viewport: 500 * 700, Device: mobile, Status: False
+Task: 3, Test Name: Old price is displayed correctly, DOM Id: old_price,Browser: Mobile Portrait, Viewport: 500 * 700, Device: mobile, Status: True
+Task: 3, Test Name: Percentage discount is displayed correctly, DOM Id: percentage,Browser: Mobile Portrait, Viewport: 500 * 700, Device: mobile, Status: True
+Task: 3, Test Name: Add to Cart button is displayed, DOM Id: A__btn__114,Browser: Mobile Portrait, Viewport: 500 * 700, Device: mobile, Status: True

@@ -1,0 +1,4 @@
+# system level config
+system:
+  env: v2
+  DEMO_APP_URL: "https://demo.applitools.com/gridHackathonV2.html"
