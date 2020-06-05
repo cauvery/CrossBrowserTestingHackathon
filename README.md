@@ -23,7 +23,7 @@ Install `pip` the python package installer, if you don't already have it:
 Next, install the required dependencies:
 
 ```
-$ pip install -r requirements.txt 
+  $ pip install -r requirements.txt 
 ```
 
 ## Usage
@@ -34,13 +34,17 @@ To execute all tests
 ```
   $ pytest --env=v1 -s tests
 ```
+Default executes on version v1 if no env is provided (-s to print console output)
+```
+  $ pytest -s tests
+```
 
-To execute only Traditional tests only 
+To execute Traditional tests only 
 ```
   $ pytest --env=v1 -s tests/TradionalTests
 ```
 
-To execute only Traditional tests only 
+To execute Modern tests only 
 ```
   $ pytest --env=v1 -s tests/ModernTests
 ```
