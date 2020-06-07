@@ -5,12 +5,16 @@
 ## Overview
 
 Cross Browser Testing using Traditional approach and Applitools AI with Ultrafast Grid 
+Using Pytest and Selenium
 
 Note: Traditional tests can be viewed as html reports and screenshot is available for failures embedded within html report.
 
+## Prerequisites
+Python 3 and pip
+
 ## Installation
 
-First you will need to clone the repo:
+Clone the repo:
 
 ```
   $ git clone https://github.com/cauvery/CrossBrowserTestingHackathon.git

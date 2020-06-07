@@ -1,19 +1,17 @@
 import platform
+import time
 
 import pytest
 from applitools.common import ScreenOrientation
 
-from core_utils import config
+from core_utils import config, log
 from selenium import webdriver
-from selenium.webdriver.chrome.options import Options
-from applitools.selenium import Eyes, Target
-
-from webdriver_manager.firefox import GeckoDriver
 from webdriver_manager.chrome import ChromeDriverManager
 from webdriver_manager.firefox import GeckoDriverManager
 from webdriver_manager.microsoft import EdgeDriverManager
-from selenium.webdriver import Chrome, Firefox, Edge, DesiredCapabilities
+from selenium.webdriver import Chrome, DesiredCapabilities
 import os
+
 
 from applitools.selenium import (
     logger,
@@ -25,13 +23,10 @@ from applitools.selenium import (
     DeviceName,
 )
 
+logger = log.getLogger( __name__ )
+
 global driver
 driver = None
-
-
-# def pytest_generate_tests(metafunc):
-#     if "browser" in metafunc.fixturenames:
-#         metafunc.parameterize("browser",metafunc.config.option.browser)
 
 def pytest_addoption(parser):
     parser.addoption( "--env", action="store", default="v1",
@@ -71,7 +66,7 @@ browsers_ids = [
     "Chrome 768*700",
     "Firefox 768*700",
     "Edge 768*700",
-    "Mobile Portrait 500*700",
+    "Mobile Portrait 500*700"
 ]
 
 @pytest.fixture( scope="function" )
@@ -95,6 +90,11 @@ def setup(request, Mgr):
     width = browsers["width"]
     height = browsers["height"]
     device = browsers["device"]
+    viewport = "".join( (width, " * ", height) )
+
+    logger.info("Browser : %s", browser)
+    logger.info("Device : %s", device)
+    logger.info("Viewport: %s", viewport)
 
     global driver
     driver = None
@@ -123,8 +123,6 @@ def setup(request, Mgr):
 
     driver.set_window_size( width, height )
     driver.implicitly_wait( 10 )
-
-    viewport = "".join( (width, " * ", height) )
 
     Mgr["driver"] = driver
 
@@ -201,3 +199,17 @@ def get_fullpage_screenshot(name):
         total_width = driver.execute_script( "return document.body.parentNode.scrollWidth" )
         driver.set_window_size( total_width, total_height )
         driver.save_screenshot( name )
+
+def highlight(element, effect_time, color, border):
+    """Highlights (blinks) a Selenium Webdriver element"""
+    driver = element._parent
+    def apply_style(s):
+        driver.execute_script("arguments[0].setAttribute('style', arguments[1]);",
+                              element, s)
+    original_style = element.get_attribute('style')
+    apply_style("border: {0}px solid {1};".format(border, color))
+    time.sleep(effect_time)
+    apply_style(original_style)
+
+# open_window_elem = driver.find_element_by_id( "openwindow" )
+# highlight( open_window_elem, 3, "blue", 5 )

@@ -1,6 +1,5 @@
 #!/usr/bin/env python
 # coding: utf-8
-from applitools.selenium import eyes
 from selenium.webdriver.common.by import By
 from core_utils.page.BasePage import BasePage
 from core_utils import log
@@ -8,7 +7,7 @@ import time
 
 logger = log.getLogger( __name__ )
 
-TIMEOUT = 5
+TIMEOUT = 2
 
 
 class AppliFashionPageLocators( object ):
@@ -24,6 +23,11 @@ class AppliFashionPageLocators( object ):
     VIEW_LIST = (By.CLASS_NAME, "ti-view-list")
     WISH_LIST = (By.ID, "A__wishlist__52")
     CART_COUNT = (By.ID, "STRONG____50")
+
+    MINI_CONTROLS = (By.ID, "UL____222")
+    MINI_WISH_CONTROL = (By.ID, "LI____222")
+    MINI_SHUFFLE_CONTROL = (By.ID, "LI____227")
+    MINI_CART_CONTROL = (By.ID, "LI____231")
 
     COLORS_BLACK = (By.ID, "colors__Black")
     PRODUCT_GRID = (By.ID, "product_grid")
@@ -51,7 +55,7 @@ class AppliFashionHomePage( BasePage ):
         driver.find_element( *AppliFashionPageLocators.FILTER_BUTTON ).click()
 
         product_grid = driver.find_element_by_id( "product_grid" )
-        eyes.check_region( product_grid, "Check Filter Product Grid" )
+        #eyes.check_region( product_grid, "Check Filter Product Grid" )
 
     def is_search_field_displayed(self):
         driver = self.driver
@@ -85,6 +89,47 @@ class AppliFashionHomePage( BasePage ):
         driver = self.driver
         return driver.find_element( *AppliFashionPageLocators.CART_COUNT ).is_displayed()
 
+    def is_mini_controls_displayed(self):
+        driver = self.driver
+        return driver.find_element(*AppliFashionPageLocators.MINI_CONTROLS).is_displayed()
+
+    def get_number_of_product_items(self):
+        driver = self.driver
+        return len( driver.find_elements_by_xpath( "//div[@id='product_grid']/div" ) )
+
+    # get list of all wish heart symbol
+    def verify_mini_wish_control_exists(self):
+        driver = self.driver
+        tihearts = driver.find_elements_by_xpath("//i[contains(@id,'I__tiheart')]")
+        # return len(tihearts) == self.get_number_of_product_items()
+        # return tihearts[0].is_displayed()
+        visible = True
+        for tiheart in tihearts:
+            if not tiheart.is_displayed():
+                visible = False
+        return visible
+
+
+
+    def verify_mini_compare_controls_exists(self):
+        driver = self.driver
+        ticontrols = driver.find_elements_by_xpath( "//i[contains(@id,'I__ticontrols')]" )
+        # return len( ticontrols ) == self.get_number_of_product_items()
+        visible = True
+        for ticontrol in ticontrols:
+            if not ticontrol.is_displayed():
+                visible = False
+        return visible
+
+    def verify_mini_cart_controls_exists(self):
+        driver = self.driver
+        ticarts = driver.find_elements_by_xpath( "//i[contains(@id,'I__tishopping')]" )
+        # return len( ticarts ) == self.get_number_of_product_items()
+        visible = True
+        for ticart in ticarts:
+            if not ticart.is_displayed():
+                visible = False
+        return visible
 
     def get_filter_results_by_color(self, color=None):
         logger.info("*** Filter Results by color %s **** ", color)
@@ -102,3 +147,4 @@ class AppliFashionHomePage( BasePage ):
         grid_items = len(driver.find_elements_by_class_name( "grid_item" ))
 
         return grid_items
+
